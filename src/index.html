@@ -1,13 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chicago in Motion — a one-page guide to five essential Chicago places."
+    />
+    <title>Chicago in Motion | CS409 MP1</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="siteHeader">
+      <nav class="site-nav shell" aria-label="Primary navigation">
+        <a
+          class="brand"
+          href="#home"
+          data-scroll
+          aria-label="Chicago in Motion, home"
+        >
+          <span class="brand__mark" aria-hidden="true">CHI</span>
+          <span class="brand__name">In Motion</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-controls="navLinks"
+          aria-expanded="false"
+          aria-label="Open navigation"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a class="is-active" href="#home" data-scroll>Home</a></li>
+          <li><a href="#discover" data-scroll>Discover</a></li>
+          <li><a href="#highlights" data-scroll>Highlights</a></li>
+          <li><a href="#explore" data-scroll>Explore</a></li>
+          <li><a href="#film" data-scroll>Film</a></li>
+          <li><a href="#visit" data-scroll>Visit</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero nav-section" id="home" data-nav-section>
+        <div class="hero__content shell" data-reveal>
+          <p class="eyebrow eyebrow--light">41.8781° N · 87.6298° W</p>
+          <h1>Chicago<br /><em>in motion.</em></h1>
+          <p class="hero__lede">
+            Steel, water, and neighborhood energy — five frames from a city that
+            never stands still.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#highlights" data-scroll>
+              Explore the city
+            </a>
+            <a class="button button--ghost" href="#film" data-scroll>
+              Watch the film
+            </a>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#discover" data-scroll>
+          <span>Scroll to discover</span>
+          <span class="scroll-cue__line" aria-hidden="true"></span>
+        </a>
+
+        <a
+          class="photo-credit photo-credit--hero"
+          href="https://unsplash.com/photos/8FdEwlxP3oU"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Photo · Max Bender / Unsplash
+        </a>
+      </section>
+
+      <section
+        class="section section--paper nav-section"
+        id="discover"
+        data-nav-section
+      >
+        <div class="shell">
+          <div class="section-heading" data-reveal>
+            <p class="eyebrow">01 · Discover</p>
+            <h2>A city built in layers.</h2>
+            <p>
+              Chicago rewards the curious. Look up for bold architecture, follow
+              the river through downtown, then keep moving until the skyline
+              meets Lake Michigan.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card" data-reveal>
+              <span
+                class="css-icon css-icon--architecture"
+                aria-hidden="true"
+              ></span>
+              <p class="feature-card__number">01</p>
+              <h3>Architecture</h3>
+              <p>
+                Historic stone, modern glass, and elevated tracks turn every
+                downtown block into a study in contrast.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <span class="css-icon css-icon--water" aria-hidden="true"></span>
+              <p class="feature-card__number">02</p>
+              <h3>Lakefront</h3>
+              <p>
+                The city opens onto miles of blue — a shoreline made for long
+                walks, quick rides, and wide skyline views.
+              </p>
+            </article>
+            <article class="feature-card" data-reveal>
+              <span
+                class="css-icon css-icon--neighborhoods"
+                aria-hidden="true"
+              ></span>
+              <p class="feature-card__number">03</p>
+              <h3>Neighborhoods</h3>
+              <p>
+                Each stop changes the rhythm, from downtown landmarks to the
+                independent storefronts of Wicker Park.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--ink nav-section"
+        id="highlights"
+        data-nav-section
+      >
+        <div class="shell">
+          <div class="section-heading section-heading--split" data-reveal>
+            <div>
+              <p class="eyebrow eyebrow--bright">02 · Highlights</p>
+              <h2>Five Chicago frames.</h2>
+            </div>
+            <p>
+              Use the arrows, dots, or keyboard to move from polished landmarks
+              to neighborhood streets.
+            </p>
+          </div>
+
+          <div
+            class="carousel"
+            id="cityCarousel"
+            tabindex="0"
+            aria-label="Chicago highlights carousel"
+          >
+            <button
+              class="carousel__arrow carousel__arrow--previous"
+              id="previousSlide"
+              type="button"
+              aria-label="Previous highlight"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+
+            <div class="carousel__viewport">
+              <div class="carousel__track" id="carouselTrack">
+                <article class="carousel-slide" aria-hidden="false">
+                  <div class="carousel-slide__image-wrap">
+                    <img
+                      src="assets/images/millennium-park.jpg"
+                      alt="Cloud Gate in Millennium Park framed by trees and downtown buildings"
+                    />
+                  </div>
+                  <div class="carousel-slide__copy">
+                    <p class="eyebrow eyebrow--bright">Frame 01 · Downtown</p>
+                    <h3>Millennium Park</h3>
+                    <p>
+                      Public art, open space, and the mirrored curve of Cloud
+                      Gate place the city and its visitors in the same frame.
+                    </p>
+                    <button
+                      class="text-link"
+                      type="button"
+                      data-open-place="millennium"
+                    >
+                      Read the story <span aria-hidden="true">↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="carousel-slide" aria-hidden="true">
+                  <div class="carousel-slide__image-wrap">
+                    <img
+                      src="assets/images/riverwalk.jpg"
+                      alt="Chicago Riverwalk beside the river and downtown towers"
+                    />
+                  </div>
+                  <div class="carousel-slide__copy">
+                    <p class="eyebrow eyebrow--bright">Frame 02 · River</p>
+                    <h3>Chicago Riverwalk</h3>
+                    <p>
+                      At river level, bridges and towers feel newly monumental
+                      while cafés, boats, and pedestrians keep the edge in
+                      motion.
+                    </p>
+                    <button
+                      class="text-link"
+                      type="button"
+                      data-open-place="riverwalk"
+                    >
+                      Read the story <span aria-hidden="true">↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="carousel-slide" aria-hidden="true">
+                  <div class="carousel-slide__image-wrap">
+                    <img
+                      src="assets/images/lakefront.jpg"
+                      alt="Chicago skyline viewed across Lake Michigan"
+                    />
+                  </div>
+                  <div class="carousel-slide__copy">
+                    <p class="eyebrow eyebrow--bright">Frame 03 · Lake</p>
+                    <h3>Lakefront</h3>
+                    <p>
+                      The horizon makes room to breathe. From the water, Chicago
+                      reads as one long architectural timeline.
+                    </p>
+                    <button
+                      class="text-link"
+                      type="button"
+                      data-open-place="lakefront"
+                    >
+                      Read the story <span aria-hidden="true">↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="carousel-slide" aria-hidden="true">
+                  <div class="carousel-slide__image-wrap">
+                    <img
+                      src="assets/images/the-loop.jpg"
+                      alt="An elevated CTA train crossing a steel bridge in the Loop"
+                    />
+                  </div>
+                  <div class="carousel-slide__copy">
+                    <p class="eyebrow eyebrow--bright">Frame 04 · Transit</p>
+                    <h3>The Loop</h3>
+                    <p>
+                      Trains trace the downtown grid overhead, turning an
+                      everyday ride into one of Chicago’s most recognizable
+                      sounds.
+                    </p>
+                    <button
+                      class="text-link"
+                      type="button"
+                      data-open-place="loop"
+                    >
+                      Read the story <span aria-hidden="true">↗</span>
+                    </button>
+                  </div>
+                </article>
+
+                <article class="carousel-slide" aria-hidden="true">
+                  <div class="carousel-slide__image-wrap">
+                    <img
+                      src="assets/images/wicker-park.jpg"
+                      alt="A lively Wicker Park street lined with shops and parked cars"
+                    />
+                  </div>
+                  <div class="carousel-slide__copy">
+                    <p class="eyebrow eyebrow--bright">Frame 05 · Northwest</p>
+                    <h3>Wicker Park</h3>
+                    <p>
+                      Murals, music, vintage storefronts, and busy sidewalks
+                      give this neighborhood a creative pulse of its own.
+                    </p>
+                    <button
+                      class="text-link"
+                      type="button"
+                      data-open-place="wicker"
+                    >
+                      Read the story <span aria-hidden="true">↗</span>
+                    </button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <button
+              class="carousel__arrow carousel__arrow--next"
+              id="nextSlide"
+              type="button"
+              aria-label="Next highlight"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <div class="carousel__footer">
+              <p class="carousel__counter" aria-live="polite">
+                <span id="currentSlide">01</span> / 05
+              </p>
+              <div class="carousel__dots" aria-label="Choose a highlight">
+                <button
+                  class="is-active"
+                  type="button"
+                  data-slide="0"
+                  aria-label="Show Millennium Park"
+                  aria-current="true"
+                ></button>
+                <button
+                  type="button"
+                  data-slide="1"
+                  aria-label="Show Chicago Riverwalk"
+                ></button>
+                <button
+                  type="button"
+                  data-slide="2"
+                  aria-label="Show the lakefront"
+                ></button>
+                <button
+                  type="button"
+                  data-slide="3"
+                  aria-label="Show the Loop"
+                ></button>
+                <button
+                  type="button"
+                  data-slide="4"
+                  aria-label="Show Wicker Park"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="city-pulse" aria-label="Chicago skyline interlude">
+        <div class="city-pulse__overlay"></div>
+        <div class="city-pulse__content shell" data-reveal>
+          <p class="eyebrow eyebrow--light">City · Water · Motion</p>
+          <blockquote>
+            “Follow the shoreline.<br />The city will find you.”
+          </blockquote>
+        </div>
+        <a
+          class="photo-credit"
+          href="https://unsplash.com/photos/xOj6_Ha1_R8"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Photo · Jeff Brown / Unsplash
+        </a>
+      </section>
+
+      <section
+        class="section section--paper nav-section"
+        id="explore"
+        data-nav-section
+      >
+        <div class="shell">
+          <div class="section-heading section-heading--split" data-reveal>
+            <div>
+              <p class="eyebrow">03 · Explore</p>
+              <h2>Choose your Chicago.</h2>
+            </div>
+            <p>
+              Every place offers a different pace. Select a card to open a
+              closer look, then build a route that moves from downtown to the
+              lake and out into the neighborhoods.
+            </p>
+          </div>
+
+          <div class="place-grid">
+            <button
+              class="place-card place-card--wide"
+              type="button"
+              data-open-place="millennium"
+              data-reveal
+            >
+              <img src="assets/images/millennium-park.jpg" alt="" />
+              <span class="place-card__shade"></span>
+              <span class="place-card__index">01</span>
+              <span class="place-card__copy"
+                ><strong>Millennium Park</strong
+                ><small>Art in the city</small></span
+              >
+              <span class="place-card__open" aria-hidden="true">+</span>
+            </button>
+            <button
+              class="place-card"
+              type="button"
+              data-open-place="riverwalk"
+              data-reveal
+            >
+              <img src="assets/images/riverwalk.jpg" alt="" />
+              <span class="place-card__shade"></span>
+              <span class="place-card__index">02</span>
+              <span class="place-card__copy"
+                ><strong>Riverwalk</strong
+                ><small>Downtown at water level</small></span
+              >
+              <span class="place-card__open" aria-hidden="true">+</span>
+            </button>
+            <button
+              class="place-card"
+              type="button"
+              data-open-place="lakefront"
+              data-reveal
+            >
+              <img src="assets/images/lakefront.jpg" alt="" />
+              <span class="place-card__shade"></span>
+              <span class="place-card__index">03</span>
+              <span class="place-card__copy"
+                ><strong>Lakefront</strong
+                ><small>Skyline, stretched wide</small></span
+              >
+              <span class="place-card__open" aria-hidden="true">+</span>
+            </button>
+            <button
+              class="place-card"
+              type="button"
+              data-open-place="loop"
+              data-reveal
+            >
+              <img src="assets/images/the-loop.jpg" alt="" />
+              <span class="place-card__shade"></span>
+              <span class="place-card__index">04</span>
+              <span class="place-card__copy"
+                ><strong>The Loop</strong
+                ><small>Steel above the street</small></span
+              >
+              <span class="place-card__open" aria-hidden="true">+</span>
+            </button>
+            <button
+              class="place-card"
+              type="button"
+              data-open-place="wicker"
+              data-reveal
+            >
+              <img src="assets/images/wicker-park.jpg" alt="" />
+              <span class="place-card__shade"></span>
+              <span class="place-card__index">05</span>
+              <span class="place-card__copy"
+                ><strong>Wicker Park</strong
+                ><small>Independent by design</small></span
+              >
+              <span class="place-card__open" aria-hidden="true">+</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--blue nav-section"
+        id="film"
+        data-nav-section
+      >
+        <div class="shell film-layout">
+          <div class="film-copy" data-reveal>
+            <p class="eyebrow eyebrow--light">04 · Film</p>
+            <h2>Ten seconds.<br />One moving city.</h2>
+            <p>
+              A short, original motion study assembled from the same Chicago
+              photography featured across this page.
+            </p>
+          </div>
+
+          <div class="video-frame" data-reveal>
+            <div class="video-frame__bar" aria-hidden="true">
+              <span></span><span></span><span></span>
+              <p>chicago-in-motion.mp4</p>
+            </div>
+            <video
+              controls
+              preload="metadata"
+              poster="assets/images/chicago-skyline.jpg"
+            >
+              <source src="assets/video/chicago-motion.mp4" type="video/mp4" />
+              Your browser does not support the HTML5 video element.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section section--red nav-section"
+        id="visit"
+        data-nav-section
+      >
+        <div class="shell">
+          <div class="section-heading section-heading--visit" data-reveal>
+            <p class="eyebrow eyebrow--light">05 · Visit</p>
+            <h2>One day, three rhythms.</h2>
+            <p>
+              A compact route through all five places — built to be walked,
+              ridden, and remembered.
+            </p>
+          </div>
+
+          <div class="day-grid">
+            <article class="day-card" data-reveal>
+              <p class="day-card__time">08:30</p>
+              <h3>Morning · Reflect</h3>
+              <p>
+                Start at Millennium Park before the crowds, then follow the
+                river west through the Loop.
+              </p>
+              <span>Millennium Park → The Loop</span>
+            </article>
+            <article class="day-card" data-reveal>
+              <p class="day-card__time">12:30</p>
+              <h3>Afternoon · Follow</h3>
+              <p>
+                Drop to the Riverwalk, move east toward the lake, and let the
+                skyline open around you.
+              </p>
+              <span>Riverwalk → Lakefront</span>
+            </article>
+            <article class="day-card" data-reveal>
+              <p class="day-card__time">18:00</p>
+              <h3>Evening · Wander</h3>
+              <p>
+                Ride northwest for dinner, record shops, murals, and an evening
+                on Milwaukee Avenue.
+              </p>
+              <span>Blue Line → Wicker Park</span>
+            </article>
+          </div>
+
+          <div class="official-social" data-reveal>
+            <p>Keep exploring with Choose Chicago</p>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/choosechicago/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Choose Chicago on Instagram"
+              >
+                <span
+                  class="social-icon social-icon--instagram"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                href="https://www.facebook.com/ChooseChicago"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Choose Chicago on Facebook"
+              >
+                <span
+                  class="social-icon social-icon--facebook"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                href="https://x.com/ChooseChicago"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Choose Chicago on X"
+              >
+                <span
+                  class="social-icon social-icon--x"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__top">
+        <div>
+          <p class="site-footer__brand">Chicago <em>in motion.</em></p>
+          <p>CS409 MP1</p>
+        </div>
+        <a href="#home" data-scroll
+          >Back to top <span aria-hidden="true">↑</span></a
+        >
+      </div>
+      <div class="shell credits">
+        <p>Photography via Unsplash:</p>
+        <p>
+          <a
+            href="https://unsplash.com/photos/8FdEwlxP3oU"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Max Bender</a
+          >,
+          <a
+            href="https://unsplash.com/photos/_myhtSKr1ag"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Daniel Romero</a
+          >,
+          <a
+            href="https://unsplash.com/photos/wRyQocoKOBA"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Aveedibya Dey</a
+          >,
+          <a
+            href="https://unsplash.com/photos/xOj6_Ha1_R8"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Jeff Brown</a
+          >,
+          <a
+            href="https://unsplash.com/photos/1z1prpczsmI"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Woldai Wagner</a
+          >, and
+          <a
+            href="https://unsplash.com/photos/vKF2Ed3ozeg"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Jacki Drexler</a
+          >.
+        </p>
+      </div>
+    </footer>
+
+    <div
+      class="modal"
+      id="placeModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+      hidden
+    >
+      <button
+        class="modal__backdrop"
+        type="button"
+        data-close-modal
+        tabindex="-1"
+        aria-label="Close place details"
+      ></button>
+      <div class="modal__panel" role="document">
+        <button
+          class="modal__close"
+          id="modalClose"
+          type="button"
+          data-close-modal
+          aria-label="Close place details"
+        >
+          ×
+        </button>
+        <div class="modal__image-wrap">
+          <img id="modalImage" alt="" />
+        </div>
+        <div class="modal__copy">
+          <p class="eyebrow" id="modalKicker"></p>
+          <h2 id="modalTitle"></h2>
+          <p id="modalBody"></p>
+          <p class="modal__tip">
+            <strong>Look for:</strong> <span id="modalTip"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
